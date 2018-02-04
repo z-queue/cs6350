@@ -47,3 +47,41 @@ hdfs dfs -ls assignment1
 
 
 
+# Assignment 1b
+--------------------------------------------------------
+Part 1
+--------------------------------------------------------
+Part 2
+
+According to README.html from movielens.org, the rating data file structure is as described below:
+
+### Ratings Data File Structure (ratings.csv)
+All ratings are contained in the file ratings.csv. Each line of this file after the header row represents one rating of one movie by one user, and has the following format:
+
+userId,movieId,rating,timestamp
+The lines within this file are ordered first by userId, then, within user, by movieId.
+
+Ratings are made on a 5-star scale, with half-star increments (0.5 stars - 5.0 stars).
+
+Timestamps represent seconds since midnight Coordinated Universal Time (UTC) of January 1, 1970.
+
+
+hdfs dfs -rm -r assignment1b
+
+hadoop jar assignment-0.0.1-SNAPSHOT.jar \
+  assignment1b.MovieRating \
+  hdfs://cshadoop1/movielens/ratings.csv \
+  hdfs://cshadoop1/user/<net-id>/assignment1b 
+
+# Verify Results
+hdfs dfs -ls assignment1b
+hdfs dfs -get assignment1b/part-r-00000
+vim part-r-00000
+
+Requirements:
+- In Mapper:
+    read in the ratings.csv file
+        use the 'movieId' s the key and the 'rating' as the value
+- In Reducer:
+    compute the averate rating (as a double datatype) for each 'movieId' and store it in the output direcotry on HDFS.
+
