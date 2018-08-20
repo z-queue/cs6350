@@ -115,4 +115,6 @@ vim movieRatingOutput
 ```
 
 ### Cleanup
+```
 unset HW_DIR
+```
