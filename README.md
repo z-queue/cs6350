@@ -5,8 +5,8 @@ Contributor: Zeqing Li, Tianqi Zhu
 ### Acknowlegement:
 
 1. The project use Maven to manage its dependencies, to compile the entire project run 
-$ mvn package or open with `Eclipse \> right click project root \> Run As > Maven Build... \> 
-type package in "Goals" field \> Run`
+$ mvn package or open with `Eclipse > right click project root > Run As > Maven Build... > 
+type package in "Goals" field > Run`
 
 The compiled assignment-0.0.1-SNAPSHOT.jar will be generated inside target folder.
 
